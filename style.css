@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+/* common */
+
+body {
+  margin: 0;
+  font-family: Arial、Hiragino Sans、Hiragino Kaku Gothic ProN、Meiryo、sans-serif;
+  color: #2A2A2A;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  /* outline: 2px solid blue; */
+}
+
+.sec-tittle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  color: #2a2a2a;
+  border: solid 1px #2a2a2a;
+  display: block;
+  width: 120px;
+  line-height: 25px;
+  padding: 8px;
+  margin: 30px auto 0 auto;
+  font-size: 12px;
+}
+
+/* header */
+
+header {
+  background-image: url(mainvisual.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* ↑画像をコンテナーいっぱいにできるだけ大きく拡大縮小し、必要に応じて画像を引き伸ばします。画像の比率が要素と異なる場合は、何もない空間が残らないように、上下または左右が切り取られます。 */
+  height: 100vh;
+  /* width: 100%; */
+  position: relative;
+  margin-bottom: 80px;
+}
+
+header h1 {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+/* magazine */
+
+.magazine {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.magazine .flex-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.magazine .flex-item .item {
+  width: 49%;
+  /* ↑残りの1％は余白の分 */
+  position: relative;
+  /* ↑
+テキストを上に重ねるために、
+親要素の「position」に「relative」を設定
+*/
+}
+
+.magazine .flex-item .item .text {
+  position: absolute;
+  max-width: 290px;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 0;
+  margin: 0 auto;
+  top: 40%;
+  left: 0;
+  right: 0;
+}
+
+.magazine h3  {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.magazine p {
+  font-size: 14px;
+}
+
+/* fashion */
+
+.fashion {
+  background-image: url(bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*  containの場合
+画像を切り取ったり縦横比を崩したりすることなく、コンテナー内で可能な限り大きくします。コンテナーが画像よりも大きい場合、background-repeat プロパティが no-repeat に設定されていない限り、画像がタイル状に配置されます。 */
+  background-position: center bottom;
+  height: 440px;
+  text-align: center;
+  padding-top: 60px;
+  margin-bottom: 80px;
+}
+
+.fashion p {
+  font-size: 14px;
+}
+
+/* catalog-antique */
+
+.catalog-antique {
+  background: #F5F5F5;
+  padding: 60px 0;
+}
+
+.catalog-antique .sec-title {
+  margin-bottom: 40px;
+}
+.catalog-antique .flex-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.catalog-antique .item {
+  width: 48%;
+  text-align: center;
+}
+.catalog-antique .item img {
+  width: 100%;
+}
+.catalog-antique .item p {
+  text-align: left;
+  font-size: 14px;
+}
+
+.catalog-antique .item p + p {
+  margin-top: 30px;
+}
+
+/* footer */
+
+footer {
+  background: #333333;
+}
+
+footer .flex-item {
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  padding: 100px 5%;
+  }
+
+footer .item {
+  width: 33%;
+  line-height: 2;
+}
+
+footer .item:first-child {
+  padding: 60px 0;
+}
+
+footer h3 {
+  font-size: 16px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+footer li {
+  font-size: 12px;
+}
+
+footer li::before {
+  content: "- ";
+  margin-right: 5px;
+  /* ↑leftと間違えないようにね
+  ::beforeだからli要素の左側につくよ */
+}
+
+footer .copyright {
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 0;
+}
+/* footerの背景色が二分割に変わるのどうしたらいいんじゃと思ったけど、pはブロック要素だから画面横幅いっぱいに広がるんだった */
+
+
+@media (max-width:896px) {
+
+  /* magazine */
+
+  .magazine .flex-item {
+    flex-direction: column;
+  }
+  .magazine .flex-item .item {
+    width: 100%;
+  }
+  .magazine .flex-item .item:first-child {
+    margin-bottom: 30px;
+  }
+
+  /* fashion */
+
+  .fashion {
+    padding-top: 35px;
+    margin-bottom: 50px;
+  }
+
+
+  /* catalog-antique */
+
+  .catalog-antique {
+    padding: 30px 0;
+  }
+  .catalog-antique .flex-item {
+    flex-direction: column;
+  }
+  .catalog-antique .item {
+    width: 100%;
+  }
+  .catalog-antique .item:first-child {
+    margin-bottom: 60px;
+  }
+
+  /* footer */
+
+  footer .flex-item {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+  footer .item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  footer .item:first-child {
+    text-align: center;
+    padding: 0;
+  }
+}
